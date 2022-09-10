@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# Table Component API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 💡 Overview
 
-## Available Scripts
+Table component that is built with reusability and modularity in mind.
+Developers should be able to able to plug and play data in with relative ease.
 
-In the project directory, you can run:
+note: API call may be too fast to see the loading state, so I've added a `setTimeout()`
 
-### `npm start`
+### ✅ To-Do List
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+##### Expectations:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [x] Table should have 4 or more columns.
+      <br>
+- [x] Table data state
+      <br>
+- [x] Asynchronously fetching data can be faked (setTimeout, Promise, …)
+- [x] Display in-flight state while fetching data
+      <br>
 
-### `npm test`
+- [x] Table should have pagination (ex. 100 records, 25 records per page)
+- [x] Next / Previous buttons
+      <br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [x] Show current page number
+- [x] Table should have filtering
+- [x] At least one column should be sortable
+      <br>
+- [x] Add a search bar above table to filter by one data property
+- [x] Table rows should be selectable
+- [x] Create a checkbox for each row
+- [x] Display selected rows as JSON below Table component
+- [x] No class components. Use hooks.
 
-### `npm run build`
+### 🛠 Props
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##### title
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Type: `String`
+Default: `null`
+Display table title on top of table
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##### resource
 
-### `npm run eject`
+Type: `Array`
+Array of resource object to be displayed in the table
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+##### minLoadingItems
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Type: `Number`
+Default: 8
+Minimum skeleton items to show while data is loading (to prevent empty table when loading)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+##### isLoading
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Type: `Boolean`
+Default: `false`
+Loading state to trigger conditionals (used to trigger skeleton loading effect as we wait for a response from API)
 
-## Learn More
+##### headers
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Type: `Array`
+Array of objects to define the headers on the table, the headers will determine which column of `resource` to populate
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+##### count
 
-### Code Splitting
+Type: `Number`
+Number of items in the resource (used to display total records)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+##### limitPerPage
 
-### Analyzing the Bundle Size
+Type: `Number`
+Limit items per page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+##### prevPage
 
-### Making a Progressive Web App
+Event function to trigger previous page API call
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+##### nextPage
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Event function to trigger next page API call
