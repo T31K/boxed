@@ -23,6 +23,7 @@ export default function TableBase({
     }
   }, [resource]);
 
+  // fires on change, sets state and call filterResource()
   const handleSearchValue = ({ target }) => {
     if (target.value) {
       setSearchValue(target.value);
@@ -42,6 +43,7 @@ export default function TableBase({
     setRenderedResource(filtered);
   };
 
+  // toggle icons and toggle sort to ascending/descending/none
   const sortResource = () => {
     switch (iconBase) {
       case "minus":

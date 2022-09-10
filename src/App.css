@@ -1,7 +1,9 @@
 @import 'https://fonts.googleapis.com/css?family=Open+Sans:600,700';
 
+/* ===== global styles ===== */
 * {font-family: 'Open Sans', sans-serif; font-weight: 600;}
 
+/* ===== table styles ===== */
 .rwd-table {
   margin: auto;
   border-collapse: collapse;
@@ -40,7 +42,6 @@
 .rwd-table td:first-child {
   margin-top: .5em;
   font-weight: 700 !important;
-  
 }
 
 .rwd-table td:last-child {
@@ -74,6 +75,8 @@
 .rwd-table td {
   padding: .5em 1em;
 }
+
+/* responsive design */
 @media screen and (max-width: 601px) {
   .rwd-table tr:nth-child(2) {
     border-top: none;
@@ -105,23 +108,11 @@
   }
 }
 
-
-/* THE END OF THE IMPORTANT STUFF */
-
-/* Basic Styling */
-body {
-background: #fff;
- 
-}
-h1 {
-  text-align: center;
-  font-size: 2.4em;
-  color: #2a2a2a;
-}
 .container {
   display: block;
   text-align: center;
 }
+
 h3 {
   display: inline-block;
   position: relative;
@@ -136,6 +127,7 @@ h3:before {
   -webkit-animation: leftRight 2s linear infinite;
   animation: leftRight 2s linear infinite;
 }
+
 h3:after {
   content: "\25b6";
   position: absolute;
@@ -143,6 +135,7 @@ h3:after {
   -webkit-animation: leftRight 2s linear infinite reverse;
   animation: leftRight 2s linear infinite reverse;
 }
+
 @-webkit-keyframes leftRight {
   0%    { -webkit-transform: translateX(0)}
   25%   { -webkit-transform: translateX(-10px)}
@@ -200,6 +193,7 @@ h3:after {
   animation: shine-lines 2s infinite ease-out;
 }
 
+/* loading animation */
 @keyframes shine-lines {
   0% {
     background-position: -100px;
@@ -230,6 +224,7 @@ span.loading {
   }
 }
 
+/* button controls */
 div.controls {
   margin: auto;
   width: 50%;
@@ -260,19 +255,16 @@ div.controls button:hover {
 }
 
 
-/* ICONS */
+/* icons */
 svg.icon {
   margin-left: 5px;
   padding: 2px;
-  
 }
 
 svg.icon:hover {
   background: rgb(107, 107, 107);
   border-radius: 50%;
 }
-
-
 
 input[type='text'] {
   outline: none;
@@ -283,7 +275,6 @@ input[type='text'] {
   width: 300px;
   padding: 0 15px;
   border: 3px solid rgb(158, 158, 158);;
-  
 }
 
 input:focus {
