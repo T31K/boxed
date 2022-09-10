@@ -12,7 +12,6 @@ note: API call may be too fast to see the loading state, so I've added a `setTim
 #### Expectations:
 
 - [x] Table should have 4 or more columns.
-      <br>
 - [x] Table data state
       <br>
 - [x] Asynchronously fetching data can be faked (setTimeout, Promise, …)
@@ -39,11 +38,13 @@ note: API call may be too fast to see the loading state, so I've added a `setTim
 
 Type: `String`
 Default: `null`
+<br/>
 Display table title on top of table
 
 #### resource
 
 Type: `Array`
+<br/>
 Array of resource object to be displayed in the table
 
 #### minLoadingItems
