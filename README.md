@@ -1,15 +1,15 @@
 # Table Component API
 
-### 💡 Overview
+## 💡 Overview
 
 Table component that is built with reusability and modularity in mind.
 Developers should be able to able to plug and play data in with relative ease.
 
 note: API call may be too fast to see the loading state, so I've added a `setTimeout()`
 
-### ✅ To-Do List
+## ✅ To-Do List
 
-#### Expectations:
+### Expectations:
 
 - [x] Table should have 4 or more columns.
 - [x] Table data state
@@ -32,9 +32,9 @@ note: API call may be too fast to see the loading state, so I've added a `setTim
 - [x] Display selected rows as JSON below Table component
 - [x] No class components. Use hooks.
 
-### 🛠 Props
+## 🛠 Props
 
-#### title
+### title
 
 Type: `String`
 <br/>
@@ -42,43 +42,50 @@ Default: `null`
 <br/>
 Display table title on top of table
 
-#### resource
+### resource
 
 Type: `Array`
 <br/>
 Array of resource object to be displayed in the table
 
-#### minLoadingItems
+### minLoadingItems
 
 Type: `Number`
+<br/>
 Default: 8
+<br/>
 Minimum skeleton items to show while data is loading (to prevent empty table when loading)
 
-#### isLoading
+### isLoading
 
 Type: `Boolean`
+<br/>
 Default: `false`
+<br/>
 Loading state to trigger conditionals (used to trigger skeleton loading effect as we wait for a response from API)
 
-#### headers
+### headers
 
 Type: `Array`
+<br/>
 Array of objects to define the headers on the table, the headers will determine which column of `resource` to populate
 
-#### count
+### count
 
 Type: `Number`
+<br/>
 Number of items in the resource (used to display total records)
 
-#### limitPerPage
+### limitPerPage
 
 Type: `Number`
+<br/>
 Limit items per page
 
-#### prevPage
+### prevPage
 
 Event function to trigger previous page API call
 
-#### nextPage
+### nextPage
 
 Event function to trigger next page API call
