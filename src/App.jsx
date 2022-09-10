@@ -1,52 +1,12 @@
 import { useState, useEffect } from "react";
-import "./App.css";
 import TableBase from "./components/TableBase";
 import axios from "axios";
+import { tableHeaders } from "./helpers/tableHeaders";
+import "./App.css";
 
 function App() {
   const [resource, setResource] = useState([]);
-  const [headers, setHeaders] = useState([
-    {
-      name: "name",
-      label: "Name",
-      sortable: true,
-    },
-    {
-      name: "height",
-      label: "Height (cm)",
-      sortable: false,
-    },
-    {
-      name: "mass",
-      label: "Mass (KG)",
-      sortable: false,
-    },
-    {
-      name: "hair_color",
-      label: "Hair Color",
-      sortable: false,
-    },
-    {
-      name: "skin_color",
-      label: "Skin Color",
-      sortable: false,
-    },
-    {
-      name: "eye_color",
-      label: "Skin Color",
-      sortable: false,
-    },
-    {
-      name: "birth_year",
-      label: "Birth Year",
-      sortable: false,
-    },
-    {
-      name: "gender",
-      label: "Gender",
-      sortable: false,
-    },
-  ]);
+  const [headers, setHeaders] = useState(tableHeaders);
   const [count, setCount] = useState("");
   const [pageCount, setPageCount] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
