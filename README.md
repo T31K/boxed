@@ -37,6 +37,7 @@ note: API call may be too fast to see the loading state, so I've added a `setTim
 #### title
 
 Type: `String`
+<br/>
 Default: `null`
 <br/>
 Display table title on top of table
