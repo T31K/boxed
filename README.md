@@ -9,7 +9,7 @@ note: API call may be too fast to see the loading state, so I've added a `setTim
 
 ### ✅ To-Do List
 
-##### Expectations:
+#### Expectations:
 
 - [x] Table should have 4 or more columns.
       <br>
@@ -35,48 +35,48 @@ note: API call may be too fast to see the loading state, so I've added a `setTim
 
 ### 🛠 Props
 
-##### title
+#### title
 
 Type: `String`
 Default: `null`
 Display table title on top of table
 
-##### resource
+#### resource
 
 Type: `Array`
 Array of resource object to be displayed in the table
 
-##### minLoadingItems
+#### minLoadingItems
 
 Type: `Number`
 Default: 8
 Minimum skeleton items to show while data is loading (to prevent empty table when loading)
 
-##### isLoading
+#### isLoading
 
 Type: `Boolean`
 Default: `false`
 Loading state to trigger conditionals (used to trigger skeleton loading effect as we wait for a response from API)
 
-##### headers
+#### headers
 
 Type: `Array`
 Array of objects to define the headers on the table, the headers will determine which column of `resource` to populate
 
-##### count
+#### count
 
 Type: `Number`
 Number of items in the resource (used to display total records)
 
-##### limitPerPage
+#### limitPerPage
 
 Type: `Number`
 Limit items per page
 
-##### prevPage
+#### prevPage
 
 Event function to trigger previous page API call
 
-##### nextPage
+#### nextPage
 
 Event function to trigger next page API call
