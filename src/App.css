@@ -266,6 +266,10 @@ svg.icon:hover {
   border-radius: 50%;
 }
 
+td.checkbox {
+  width: 20px;
+}
+
 input[type='text'] {
   outline: none;
   border: none;

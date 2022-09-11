@@ -16,6 +16,7 @@ export default function TableBase({
   const [searchValue, setSearchValue] = useState("");
   const [renderedResource, setRenderedResource] = useState([]);
   const [iconBase, setIconBase] = useState("minus");
+  const [selectedRows, setSelectedRows] = useState([]);
 
   useEffect(() => {
     if (resource) {
@@ -71,6 +72,14 @@ export default function TableBase({
     }
   };
 
+  const handleSelectedRows = ({ target }, index) => {
+    if (target.checked && !selectedRows.includes(index)) {
+      setSelectedRows([...selectedRows, index]);
+    } else {
+      setSelectedRows([...selectedRows].filter((item) => item !== index));
+    }
+  };
+
   return (
     <div class="container">
       <h1>{title}</h1>
@@ -104,8 +113,19 @@ export default function TableBase({
             ? renderedResource?.map((obj, index) => {
                 return (
                   <tr>
-                    {headers.map((nestedObj) => {
-                      return <td>{obj[nestedObj.name]}</td>;
+                    {headers.map((nestedObj, nestedIndex) => {
+                      return obj[nestedObj.name] ? (
+                        <td>{obj[nestedObj.name]}</td>
+                      ) : (
+                        <td className="checkbox">
+                          <input
+                            type="checkbox"
+                            onChange={(e, nestedIndex) =>
+                              handleSelectedRows(e, index)
+                            }
+                          />
+                        </td>
+                      );
                     })}
                   </tr>
                 );
@@ -129,6 +149,7 @@ export default function TableBase({
         <button onClick={prevPage}>Previous</button>
         <button onClick={nextPage}>Next</button>
       </div>
+      <p>{selectedRows.length} selected</p>
       <p>
         Displaying {renderedResource.length} of {count} records
       </p>

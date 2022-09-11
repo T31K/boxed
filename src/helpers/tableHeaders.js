@@ -1,5 +1,10 @@
 export const tableHeaders = [
   {
+    name: "selected",
+    label: "",
+    sortable: false,
+  },
+  {
     name: "name",
     label: "Name",
     sortable: true,
